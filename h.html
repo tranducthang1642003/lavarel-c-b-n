@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đăng ký</title>
+    <style>
+        /* CSS cho form */
+        .registrationForm {
+            display: none; /* Ban đầu ẩn form */
+        }
+        .hh {
+            display: block; /* Class để hiện phần tử */
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleForm">Xxx</button> <!-- Nút "X" để đóng/mở form -->
+    <form id="registrationForm" class="registrationForm">
+        <label for="username">Tên người dùng:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="password">Mật khẩu:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Đăng Ký">
+    </form>
+
+    <script>
+        const toggleButton = document.getElementById("toggleForm");
+        const registrationForm = document.getElementById("registrationForm");
+
+        // Bắt sự kiện click vào nút "X"
+        toggleButton.addEventListener("click", () => {
+            registrationForm.classList.toggle("hh"); // Thêm hoặc bỏ class "hidden" để ẩn/hiện form
+        });
+    </script>
+</body>
+</html>
