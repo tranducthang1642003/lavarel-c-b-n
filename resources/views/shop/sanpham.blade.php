@@ -67,13 +67,13 @@
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
                                                         <a href="#"><i class="fas fa-apple-alt me-2"></i>táo</a>
-                                                        <span>(3)</span>
+                                                        
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
                                                         <a href="#"><i class="fas fa-apple-alt me-2"></i>cam</a>
-                                                        <span>(5)</span>
+                                                        
                                                     </div>
                                                 </li>
                                                 <li>
@@ -105,15 +105,17 @@
                                         </div>
                                     </div>
                              
+
+                                    
                                     <div class="col-lg-12">
                                         <h4 class="mb-3">Sản phẩm nổi bật</h4>
-                                        @foreach ($products as $product)
+                                        @foreach ($products as $sanpham)
                                         <div class="d-flex align-items-center justify-content-start">
                                             <div class="rounded me-4" style="width: 100px; height: 100px;">
                                                 <img src="img/featur-1.jpg" class="img-fluid rounded" alt="">
                                             </div>
                                             <div>
-                                                <h6 class="mb-2">{{ $product->name }}</h6>
+                                                <h6 class="mb-2">{{ $sanpham->name }}</h6>
                                                 <div class="d-flex mb-2">
                                                     <i class="fa fa-star text-secondary"></i>
                                                     <i class="fa fa-star text-secondary"></i>
@@ -122,7 +124,7 @@
                                                     <i class="fa fa-star"></i>
                                                 </div>
                                                 <div class="d-flex mb-2">
-                                                    <h5 class="fw-bold me-2">{{ $product->price }} đ</h5>
+                                                    <h5 class="fw-bold me-2">{{ $sanpham->price }} đ</h5>
                                                     <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
                                                 </div>
                                             </div>
@@ -189,15 +191,16 @@
                                     <div class="col-md-6 col-lg-6 col-xl-4">
                                         <div class="rounded position-relative fruite-item">
                                             <div class="fruite-img">
-                                                <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                                <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}" class="img-fluid w-100 rounded-top" alt="">
                                             </div>
                                             <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
                                             <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                                 <h4>{{ $product->name }}</h4>
-                                                <p>Nho Xanh Úc không hạt phổ biến là: Thompson, Pristine, Autumn King quả dài thuân, màu xanh hổ phách</p>
+                                                <p>{{$product->motangan}}</p>
                                                 <div class="d-flex justify-content-between flex-lg-wrap">
                                                     <p class="text-dark fs-5 fw-bold mb-0">{{ $product->price }} đ/ kg</p>
-                                                    <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i>Thêm vào giỏ hàng</a>
+                                                    <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary">
+                                                        <i class="fa fa-shopping-bag me-2 text-primary"></i>Thêm vào giỏ hàng</a>
                                                 </div>
                                             </div>
                                         </div>

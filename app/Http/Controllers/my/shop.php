@@ -4,6 +4,8 @@ namespace App\Http\Controllers\my;
 
 use Illuminate\Http\Request;
 use App\Models\sanpham;
+use App\Models\danhmuc;
+
 
 class shop
 {
@@ -11,17 +13,29 @@ class shop
      * Display a listing of the resource.
      */
     public function sanpham()
-    {
-        
-        $products = sanpham::all(); 
 
-        return view('shop.sanpham', ['products' => $products]);
-    }
+{
+    $products = sanpham::all();
+    return view('shop.sanpham',compact('products'));
+}
+    
+
+public function danhmuc()
+
+{
+     $danhmucs = DanhMuc::all();
+    return view('shop.sanpham',compact('danhmucs'));
+}
+
+
 
     public function create()
     {
         //
     }
+
+
+  
 
     /**
      * Store a newly created resource in storage.
@@ -34,12 +48,7 @@ class shop
     /**
      * Display the specified resource.
      */
-    public function showshop()
-    
-        {
-            return view('shop.showshop');
-        }
-    
+
 
     /**
      * Show the form for editing the specified resource.

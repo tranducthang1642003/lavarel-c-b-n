@@ -14,15 +14,14 @@ class RegisterController
     {
         return view('auth.register');
     }
-
-    public function register(Request $request)
-    {
-        // dd($req->all());
+      // dd($req->all());
         // $request->validate([
         //     'name' => 'required|string|max:255',
         //     'email' => 'required|string|email|max:255|unique:users',
         //     'password' => 'required|string|min:8|confirmed',
         // ]);
+    public function register(Request $request)
+    {
 
         $user =  User::create([
             'name' => $request->name,
@@ -38,6 +37,8 @@ class RegisterController
     }
 
 
+
+    
     public function showLoginForm()
     {
         return view('auth.login');

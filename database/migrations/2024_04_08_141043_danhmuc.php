@@ -11,17 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cart', function (Blueprint $table) {
+        Schema::create('danhmuc', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('mota');
+            $table->string('image')->nullable(); // Thêm trường hình ảnh
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('cart');
+        Schema::dropIfExists('danhmuc');
     }
+
+
+
+    
 };

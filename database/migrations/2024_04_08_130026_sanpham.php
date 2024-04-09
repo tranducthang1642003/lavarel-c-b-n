@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sanpham', function (Blueprint $table) {
-            $table->id('id_sp');
-            $table->unsignedBigInteger('id_danhmuc');
+            $table->id();
             $table->string('name');
             $table->decimal('price', 8, 2);
             $table->string('image')->nullable();
@@ -21,9 +20,13 @@ return new class extends Migration
             $table->mediumText('motadai');
             $table->tinyInteger('hot')->default(0);
             $table->timestamps();
+            $table->unsignedBigInteger('danhmuc_id')->nullable();
+            $table->foreign('danhmuc_id')->references('id')->on('danhmuc')->onDelete('set null');
         });
         
     }
+
+
 
     /**
      * Reverse the migrations.
